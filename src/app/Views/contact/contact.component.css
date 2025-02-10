@@ -1,0 +1,123 @@
+/* Sección de contacto */
+.contact {
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo degradado azul marino y gris oscuro */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  padding: 40px 30px;
+  max-width: 600px;
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.contact:hover {
+  transform: translateY(-10px);
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #ffffff; /* Blanco para el texto */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-intro {
+  font-size: 1.2rem;
+  color: #ffffff; /* Blanco para el texto */
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.email-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #ffffff; /* Blanco */
+  font-weight: bold;
+  text-decoration: none;
+  background: #34495e;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  background: #2c3e50; /* Azul más oscuro */
+  color: #ffffff;
+}
+
+/* Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input,
+.form-textarea {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: 2px solid #b0bec5; /* Gris suave */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #2c3e50; /* Azul oscuro para el texto */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #34495e; /* Azul más intenso */
+  box-shadow: 0 0 8px rgba(52, 73, 94, 0.5);
+  outline: none;
+}
+
+.form-textarea {
+  resize: none;
+  height: 120px;
+}
+
+.form-button {
+  background: linear-gradient(135deg, #34495e, #2c3e50); /* Botón degradado azul marino */
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-button:hover {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:active {
+  transform: translateY(2px);
+  background: #2c3e50; /* Azul oscuro */
+}
+
+/* Efectos de animación */
+.contact h2,
+.contact-intro,
+.contact-form {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

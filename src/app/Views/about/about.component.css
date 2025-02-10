@@ -16,7 +16,7 @@
   width: 100%;
   z-index: 10;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-container {
@@ -32,12 +32,6 @@
   font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.1);
-  color: #68757d; /* Cambia el color en hover para dar efecto */
 }
 
 .nav-toggle {
@@ -81,7 +75,6 @@
   list-style-type: none;
   display: flex;
   gap: 20px;
-  margin: 0;
 }
 
 .nav-links li {
@@ -102,8 +95,6 @@
   background-color: #34495e; /* Gris oscuro */
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hero Section */
@@ -115,22 +106,18 @@
   align-items: center;
   text-align: center;
   padding: 20px;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ecf0f1;
   margin-bottom: 15px;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   color: #bdc3c7; /* Gris claro */
   margin-bottom: 20px;
-  animation: slideIn 1.7s ease-in-out;
 }
 
 .cta-button {
@@ -142,13 +129,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #1abc9c; /* Verde azulado */
   transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Sección de "Sobre mí" */
@@ -160,13 +146,26 @@
   margin: 30px auto;
   max-width: 800px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-me:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.05); /* Da más brillo al pasar el mouse */
+}
+
+.about-me::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .about-me h2 {
@@ -175,6 +174,8 @@
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   animation: fadeIn 1.2s ease-in-out;
+  z-index: 1;
+  position: relative;
 }
 
 .about-me p {
@@ -183,12 +184,41 @@
   color: #bdc3c7; /* Gris claro */
   text-align: justify;
   animation: slideIn 1.5s ease-in-out;
+  z-index: 1;
+  position: relative;
 }
 
 .about-me strong {
-  color: #2980b9; /* Azul interactivo */
+  color: #1abc9c; /* Verde azulado */
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Decoraciones de los párrafos */
+.about-me p::before {
+  font-size: 1.5rem;
+}
+
+.about-me p::after {
+  font-size: 1.5rem;
+}
+
+/* Botón adicional */
+.about-me .read-more {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #1abc9c;
+  color: #ecf0f1;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-me .read-more:hover {
+  background-color: #16a085;
+  transform: scale(1.1);
 }
 
 /* Animaciones */

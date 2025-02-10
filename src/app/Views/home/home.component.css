@@ -1,0 +1,82 @@
+/* Sección de habilidades */
+.skills {
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo degradado azul marino y gris oscuro */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  padding: 50px 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffffff; /* Blanco para el texto */
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  color: #ffffff; /* Blanco para el título */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.skills-intro {
+  font-size: 1.3rem;
+  color: #ffffff; /* Blanco para el subtítulo */
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #68757d; /* Azul grisáceo suave */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skills .icon {
+  font-size: 2.5rem;
+  color: #ffffff; /* Blanco para el ícono */
+  flex-shrink: 0;
+}
+
+.skills p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff; /* Blanco para el texto */
+  text-align: left;
+}
+
+.skills p strong {
+  color: #ffffff; /* Blanco para el texto en negrita */
+  font-weight: bold;
+}
+
+.skills li::before {
+  content: "✨";
+  font-size: 1.5rem;
+  color: #ffffff; /* Blanco para el ícono */
+  margin-right: 10px;
+  flex-shrink: 0;
+  display: none; /* Reemplazado por iconos personalizados */
+}
+
+/* Animación */
+.skills li:hover .icon {
+  color: #ffffff;
+  transform: rotate(10deg);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
