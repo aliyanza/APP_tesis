@@ -17,12 +17,11 @@ body {
   background-color: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
- 
 }
 
 /* Sección de habilidades */
 .skills {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--secondary-color);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px var(--shadow-color);
@@ -32,14 +31,27 @@ body {
   animation: fadeIn 1s ease-out;
 }
 
+@media (min-width: 768px) {
+  .skills {
+    padding: 2rem;
+  }
+}
+
 .skills h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary-color);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
   transition: color var(--transition-speed);
+}
+
+@media (min-width: 768px) {
+  .skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .skills h2:hover {
@@ -62,36 +74,82 @@ body {
 .team-members {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   transition: all var(--transition-speed) ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .team-members {
+    gap: 2rem;
+  }
 }
 
 /* Estilo de cada miembro */
 .team-member {
   background-color: #2c3e50;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: var(--border-radius);
   box-shadow: 0 6px 12px var(--shadow-color);
-  width: calc(33.333% - 2rem);
-  max-width: 300px;
+  width: 100%;
+  max-width: 450px;
   cursor: pointer;
   text-align: center;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), border var(--transition-speed);
-  color:white;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.team-member h1 {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  line-height: 1.3;
+}
+
+@media (min-width: 480px) {
+  .team-member h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .team-member {
+    width: calc(50% - 1.5rem);
+    max-width: 350px;
+    padding: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .team-member h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-member {
+    width: calc(33.333% - 2rem);
+    max-width: 300px;
+  }
 }
 
 .team-member:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-hover);
   border: 1px solid var(--primary-color);
 }
 
 .team-member .icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
   transition: transform var(--transition-speed), color var(--transition-speed);
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .team-member .icon {
+    font-size: 3rem;
+  }
 }
 
 .team-member .icon:hover {
@@ -100,10 +158,16 @@ body {
 }
 
 .team-member p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-light);
   margin-top: 1rem;
   transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+@media (min-width: 768px) {
+  .team-member p {
+    font-size: 1.1rem;
+  }
 }
 
 .team-member p strong {
@@ -116,28 +180,40 @@ body {
   transform: translateY(-5px);
 }
 
-/* Responsividad */
-@media (max-width: 1024px) {
-  .team-member {
-    width: calc(50% - 2rem);
+.team-member strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .team-member strong {
+    font-size: 1.1rem;
   }
 }
 
-@media (max-width: 768px) {
-  .team-member {
-    width: 100%;
-    max-width: 90%;
-    padding: 1.5rem;
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .skills h2 {
+    font-size: 1.8rem;
   }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
+  
   .team-member {
-    width: 100%;
     padding: 1rem;
   }
+  
+  .team-member h1 {
+    font-size: 1.1rem;
+  }
+  
+  .team-member .icon {
+    font-size: 2.2rem;
+  }
 }
+
+/* Reducir la escala del hover en dispositivos móviles */
+@media (max-width: 768px) {
+  .team-member:hover {
+    transform: scale(1.02);
+  }
+} 

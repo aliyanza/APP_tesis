@@ -1,123 +1,191 @@
-/* Sección de contacto */
-.contact {
-  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo degradado azul marino y gris oscuro */
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-  padding: 40px 30px;
-  max-width: 600px;
-  width: 90%;
-  margin: 30px auto;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+/* Sección de contacto */ 
+.contact { 
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Fondo degradado azul marino y gris oscuro */ 
+  border-radius: 15px; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */ 
+  padding: 25px 20px; 
+  max-width: 600px; 
+  width: 90%; 
+  margin: 30px auto; 
+  text-align: center; 
+  transition: transform 0.3s ease; 
+} 
 
-.contact:hover {
-  transform: translateY(-10px);
-}
-
-.contact h2 {
-  font-size: 2.5rem;
-  color: #ffffff; /* Blanco para el texto */
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.contact-intro {
-  font-size: 1.2rem;
-  color: #ffffff; /* Blanco para el texto */
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.email-link {
-  display: inline-block;
-  margin-bottom: 30px;
-  font-size: 1.2rem;
-  color: #ffffff; /* Blanco */
-  font-weight: bold;
-  text-decoration: none;
-  background: #34495e;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.email-link:hover {
-  background: #2c3e50; /* Azul más oscuro */
-  color: #ffffff;
-}
-
-/* Formulario */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.form-input,
-.form-textarea {
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  padding: 12px;
-  font-size: 1.1rem;
-  border: 2px solid #b0bec5; /* Gris suave */
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #2c3e50; /* Azul oscuro para el texto */
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  border-color: #34495e; /* Azul más intenso */
-  box-shadow: 0 0 8px rgba(52, 73, 94, 0.5);
-  outline: none;
-}
-
-.form-textarea {
-  resize: none;
-  height: 120px;
-}
-
-.form-button {
-  background: linear-gradient(135deg, #34495e, #2c3e50); /* Botón degradado azul marino */
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.form-button:hover {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.form-button:active {
-  transform: translateY(2px);
-  background: #2c3e50; /* Azul oscuro */
-}
-
-/* Efectos de animación */
-.contact h2,
-.contact-intro,
-.contact-form {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Quitamos el hover effect en móviles para evitar comportamientos no deseados */
+@media (min-width: 768px) {
+  .contact {
+    padding: 40px 30px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .contact:hover { 
+    transform: translateY(-10px); 
   }
 }
+ 
+.contact h2 { 
+  font-size: 2rem; 
+  color: #ffffff; /* Blanco para el texto */ 
+  margin-bottom: 15px; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+} 
 
+@media (min-width: 768px) {
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+}
+ 
+.contact-intro { 
+  font-size: 1rem; 
+  color: #ffffff; /* Blanco para el texto */ 
+  margin-bottom: 20px; 
+  font-style: italic; 
+} 
+
+@media (min-width: 768px) {
+  .contact-intro {
+    font-size: 1.2rem;
+  }
+}
+ 
+.email-link { 
+  display: block;
+  width: 85%;
+  margin: 0 auto 15px;
+  font-size: 0.9rem; 
+  color: #ffffff; /* Blanco */ 
+  font-weight: bold; 
+  text-decoration: none; 
+  background: #34495e; 
+  padding: 10px 8px; 
+  border-radius: 8px; 
+  transition: all 0.3s ease;
+  word-break: break-all; /* Para que los emails largos no desborden */
+  box-sizing: border-box;
+} 
+
+@media (min-width: 768px) {
+  .email-link {
+    display: inline-block;
+    width: auto;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+  }
+}
+ 
+.email-link:hover { 
+  background: #2c3e50; /* Azul más oscuro */ 
+  color: #ffffff; 
+} 
+ 
+/* Formulario */ 
+.contact-form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  margin-top: 15px;
+} 
+ 
+.form-input, 
+.form-textarea { 
+  font-family: 'Roboto', sans-serif; 
+  width: 100%; 
+  padding: 12px; 
+  font-size: 1rem; 
+  border: 2px solid #b0bec5; /* Gris suave */ 
+  border-radius: 10px; 
+  transition: all 0.3s ease; 
+  background-color: #ffffff; /* Fondo blanco */ 
+  color: #2c3e50; /* Azul oscuro para el texto */ 
+  box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+} 
+
+@media (min-width: 768px) {
+  .form-input, 
+  .form-textarea {
+    font-size: 1.1rem;
+  }
+}
+ 
+.form-input:focus, 
+.form-textarea:focus { 
+  border-color: #34495e; /* Azul más intenso */ 
+  box-shadow: 0 0 8px rgba(52, 73, 94, 0.5); 
+  outline: none; 
+} 
+ 
+.form-textarea { 
+  resize: none; 
+  min-height: 100px;
+  height: 120px; 
+} 
+ 
+.form-button { 
+  background: linear-gradient(135deg, #34495e, #2c3e50); /* Botón degradado azul marino */ 
+  color: #ffffff; 
+  font-size: 1.1rem; 
+  font-weight: bold; 
+  padding: 12px; 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+} 
+
+@media (min-width: 768px) {
+  .form-button {
+    font-size: 1.2rem;
+  }
+}
+ 
+.form-button:hover { 
+  background: linear-gradient(135deg, #2c3e50, #34495e); 
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+} 
+ 
+.form-button:active { 
+  transform: translateY(2px); 
+  background: #2c3e50; /* Azul oscuro */ 
+} 
+ 
+/* Efectos de animación */ 
+.contact h2, 
+.contact-intro, 
+.contact-form { 
+  animation: fadeIn 1s ease-in-out; 
+} 
+ 
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  } 
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  } 
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .contact {
+    padding: 20px 15px;
+    width: 95%;
+  }
+  
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  
+  .email-link {
+    font-size: 0.8rem;
+    width: 95%;
+  }
+  
+  .form-button {
+    font-size: 1rem;
+  }
+}
